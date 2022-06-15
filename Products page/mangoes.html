@@ -39,36 +39,43 @@
         name:"Mango Badami",
         unit:"1kg",
         price:"₹129",
+        img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/135/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/004/597/original/data/tr:w-256,h-256",
             name:"Mango Totapuri Raw",
             unit:"1kg",
             price:"80₹",
+            img:"https://images.fraazo.com/fraazo-prod/images/images/000/004/597/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-master/VMAN12.png/tr:w-256,h-256",
             name:"Mango Raw",
             unit:"250 g",
             price:"₹16",
+            img:"https://images.fraazo.com/fraazo-master/VMAN12.png/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-master/FKES1.png/tr:w-256,h-256",
             name:"Mango Kesar",
             unit:"1 kg",
             price:"₹126",
+            img:"https://images.fraazo.com/fraazo-master/FKES1.png/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-master/FDAS1.png/tr:w-256,h-256",
             name:"Mango Dasheri",
             unit:"1 kg",
             price:"₹105",
+            img:"https://images.fraazo.com/fraazo-master/FDAS1.png/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/007/294/original/data/tr:w-256,h-256",
             name:"Mango Mallika",
             unit:"1 kg",
             price:"₹151",
+            img:"https://images.fraazo.com/fraazo-prod/images/images/000/007/294/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/250/original/data/tr:w-256,h-256",
             name:"Mango Lalbhag Sindhura ",
             unit:"1 kg",
             price:"₹89",
+            img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/250/original/data/tr:w-512,h-512",
         }
     ]
 
@@ -112,6 +119,11 @@ data.map(function(elem){
     detDiv.append(name,unit,innerDiv)
     div.append(imgDiv,detDiv)
    document.getElementById("container").append(div)
+   div.addEventListener("click",func)
+   function func()
+   {
+     localStorage.setItem("viewproduct",JSON.stringify(elem));
+   }
 
 
 })
