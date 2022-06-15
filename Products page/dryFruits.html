@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <p>Home > Dry Fruits</p>
+    <h2>Dry Fruits</h2>
+    <div id="mainDiv">
+    <div id="div1">
+        <h3>
+            <a href="mangoes.html">Mangoes</a>
+        </h3>
+        <h3>
+            <a href="fruits.html">Fruits</a>
+        </h3>
+        <h3>
+            <a href="dryFruits.html">Dry Fruits</a>
+        </h3>
+        <h3>
+            <a href="kitchenStaples.html">Kitchen Staples</a>
+        </h3>
+        <h3>
+            <a href="vegetables.html">Vegetables</a>
+        </h3>
+    </div>
+    <div id="container"></div>
+</div>
+</body>
+</html>
+<script>
+   var data=[
+        {
+        imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/598/original/data/tr:w-256,h-256",
+        name:"Dry Dates- 1 kg(Pack of 5*200 gms)",
+        unit:"1kg",
+        price:"₹330",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/597/original/data/tr:w-256,h-256",
+            name:"Dry Dates- 400 gms(Pack of 2*200 gms)",
+            unit:"400 g",
+            price:"₹135",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/596/original/data/tr:w-256,h-256",
+            name:"Dry Dates",
+            unit:"200 g",
+            price:"₹70",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/580/original/data/tr:w-256,h-256",
+            name:"Cashew Tukda",
+            unit:"100 g",
+            price:"₹84",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/577/original/data/tr:w-256,h-256",
+            name:"Cashew",
+            unit:"100 g",
+            price:"₹104",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/593/original/data/tr:w-256,h-256",
+            name:"Kismis",
+            unit:"200 g",
+            price:"₹59",
+        }
+    ]
+
+// console.log(data)
+data.map(function(elem){
+    
+    let div= document.createElement("div")
+    div.setAttribute("class","OuterDiv")
+
+    let img= document.createElement("img")
+    // img.src= elem.imageUrl
+    img.setAttribute('src', elem.imgUrl)
+
+    let imgDiv= document.createElement("div")
+    imgDiv.setAttribute("class","imgDiv")
+    imgDiv.append(img)
+
+
+    let name= document.createElement("p")
+    name.innerText= elem.name
+
+    let unit= document.createElement("p")
+    unit.innerText= elem.unit
+
+    let price= document.createElement("h3")
+    price.innerText= elem.price
+
+    let btn= document.createElement("button")
+    btn.innerText="Add To Cart"
+    btn.setAttribute("class","btn")
+    
+
+
+    let innerDiv= document.createElement("div")
+    innerDiv.setAttribute("class","innerDiv")
+    innerDiv.append(price,btn)
+
+
+    let detDiv= document.createElement("div")
+    detDiv.setAttribute("class","detDiv")
+    detDiv.append(name,unit,innerDiv)
+    div.append(imgDiv,detDiv)
+   document.getElementById("container").append(div)
+
+
+})
+
+</script>
+
