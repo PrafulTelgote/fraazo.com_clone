@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <p>Home > Kitchen-staples</p>
+    <h2>Dals & Pulses</h2>
+    <div id="mainDiv">
+    <div id="div1">
+        <h3>
+            <a href="mangoes.html">Mangoes</a>
+        </h3>
+        <h3>
+            <a href="fruits.html">Fruits</a>
+        </h3>
+        <h3>
+            <a href="dryFruits.html">Dry Fruits</a>
+        </h3>
+        <h3>
+            <a href="kitchenStaples.html">Kitchen Staples</a>
+        </h3>
+        <h3>
+            <a href="vegetables.html">Vegetables</a>
+        </h3>
+    </div>
+    <div id="container"></div>
+</div>
+</body>
+</html>
+<script>
+    var data=[
+        {
+        imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/441/original/data/tr:w-256,h-256",
+        name:"Maya Kabuli Chana Big",
+        unit:"500 g",
+        price:"₹72",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/442/original/data/tr:w-256,h-256",
+            name:"Maya Kabuli Chana Big",
+            unit:"500 g",
+            price:"₹55",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/444/original/data/tr:w-256,h-256",
+            name:"Maya Masoor Dal",
+            unit:"500 g",
+            price:"₹51",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/456/original/data/tr:w-256,h-256",
+            name:"Maya Soyabean",
+            unit:"500 g",
+            price:"₹56",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/459/original/data/tr:w-256,h-256",
+            name:"Maya Tor dal",
+            unit:"1 kg",
+            price:"₹107",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/481/original/data/tr:w-256,h-256",
+            name:"Maya Moong dal",
+            unit:"1 kg",
+            price:"₹113",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/437/original/data/tr:w-256,h-256",
+            name:"Maya Chana dal",
+            unit:"500g",
+            price:"₹39",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/438/original/data/tr:w-256,h-256",
+            name:"Maya Chana Dal Stranded",
+            unit:"2pc",
+            price:"₹38",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/440/original/data/tr:w-256,h-256",
+            name:"Maya Juwar Premium",
+            unit:"1 kg",
+            price:"₹39",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/446/original/data/tr:w-256,h-256",
+            name:"Maya Moong Dal Stranded",
+            unit:"1 kg",
+            price:"₹111",
+        }
+    ]
+
+
+data.map(function(elem){
+    let cont= document.getElementById("container")
+    let div= document.createElement("div")
+    div.setAttribute("class","OuterDiv")
+
+    let img= document.createElement("img")
+    // img.src= elem.imageUrl
+    img.setAttribute('src', elem.imgUrl)
+
+    let imgDiv= document.createElement("div")
+    imgDiv.setAttribute("class","imgDiv")
+    imgDiv.append(img)
+
+
+    let name= document.createElement("p")
+    name.innerText= elem.name
+
+    let unit= document.createElement("p")
+    unit.innerText= elem.unit
+
+    let price= document.createElement("h3")
+    price.innerText= elem.price
+
+    let btn= document.createElement("button")
+    btn.innerText="Add To Cart"
+    btn.setAttribute("class","btn")
+    
+
+
+    let innerDiv= document.createElement("div")
+    innerDiv.setAttribute("class","innerDiv")
+    innerDiv.append(price,btn)
+
+
+    let detDiv= document.createElement("div")
+    detDiv.setAttribute("class","detDiv")
+    detDiv.append(name,unit,innerDiv)
+    div.append(imgDiv,detDiv)
+    cont.append(div)
+
+
+})
+
+
+
+</script>

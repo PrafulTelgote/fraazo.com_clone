@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <P>Home > Mangoes</P>
+    <h2>Mangoes</h2>
+    <div id="mainDiv">
+    <div id="div1">
+        <h3>
+            <a href="mangoes.html">Mangoes</a>
+        </h3>
+        <h3>
+            <a href="fruits.html">Fruits</a>
+        </h3>
+        <h3>
+            <a href="dryFruits.html">Dry Fruits</a>
+        </h3>
+        <h3>
+            <a href="kitchenStaples.html">Kitchen Staples</a>
+        </h3>
+        <h3>
+            <a href="vegetables.html">Vegetables</a>
+        </h3>
+    </div>
+    <div id="container"></div>
+</div>
+</body>
+</html>
+<script>
+   var data=[
+        {
+        imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/135/original/data/tr:w-256,h-256",
+        name:"Mango Badami",
+        unit:"1kg",
+        price:"₹129",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/004/597/original/data/tr:w-256,h-256",
+            name:"Mango Totapuri Raw",
+            unit:"1kg",
+            price:"80₹",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-master/VMAN12.png/tr:w-256,h-256",
+            name:"Mango Raw",
+            unit:"250 g",
+            price:"₹16",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-master/FKES1.png/tr:w-256,h-256",
+            name:"Mango Kesar",
+            unit:"1 kg",
+            price:"₹126",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-master/FDAS1.png/tr:w-256,h-256",
+            name:"Mango Dasheri",
+            unit:"1 kg",
+            price:"₹105",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/007/294/original/data/tr:w-256,h-256",
+            name:"Mango Mallika",
+            unit:"1 kg",
+            price:"₹151",
+        },{
+            imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/250/original/data/tr:w-256,h-256",
+            name:"Mango Lalbhag Sindhura ",
+            unit:"1 kg",
+            price:"₹89",
+        }
+    ]
+
+// console.log(data)
+data.map(function(elem){
+    
+    let div= document.createElement("div")
+    div.setAttribute("class","OuterDiv")
+
+    let img= document.createElement("img")
+    // img.src= elem.imageUrl
+    img.setAttribute('src', elem.imgUrl)
+
+    let imgDiv= document.createElement("div")
+    imgDiv.setAttribute("class","imgDiv")
+    imgDiv.append(img)
+
+
+    let name= document.createElement("p")
+    name.innerText= elem.name
+
+    let unit= document.createElement("p")
+    unit.innerText= elem.unit
+
+    let price= document.createElement("h3")
+    price.innerText= elem.price
+
+    let btn= document.createElement("button")
+    btn.innerText="Add To Cart"
+    btn.setAttribute("class","btn")
+    
+
+
+    let innerDiv= document.createElement("div")
+    innerDiv.setAttribute("class","innerDiv")
+    innerDiv.append(price,btn)
+
+
+    let detDiv= document.createElement("div")
+    detDiv.setAttribute("class","detDiv")
+    detDiv.append(name,unit,innerDiv)
+    div.append(imgDiv,detDiv)
+   document.getElementById("container").append(div)
+
+
+})
+
+</script>
+
