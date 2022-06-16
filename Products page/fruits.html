@@ -32,6 +32,7 @@
 </body>
 </html>
 <script>
+     let cartproduct=JSON.parse(localStorage.getItem("cartproduct")) || [];
     var data=[
         {
         imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/157/original/data/tr:w-256,h-256",
@@ -156,6 +157,20 @@ data.map(function(elem){
     detDiv.append(name,unit,innerDiv)
     div.append(imgDiv,detDiv)
     cont.append(div)
+   
+    div.addEventListener("click",func);
+   function func()
+   {
+     localStorage.setItem("viewproduct",JSON.stringify(elem));
+     window.location.href="viewproduct.html";
+   }
+   btn.addEventListener("click",btnfun)
+   function btnfun()
+   {
+    alert("Item add to Cart")
+    cartproduct.push(elem);
+     localStorage.setItem("cartproduct",JSON.stringify(cartproduct));
+   }
 
 
 })
