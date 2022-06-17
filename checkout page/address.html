@@ -65,14 +65,24 @@
     {
         width: 70%;
     }
-    #cartitems
-    {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        margin: 0% 2% 0% 2%;
-    }
+   #form
+   {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+   #form>button
+   {
+    background-color: #47be9b;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+   }
+   #form>button:hover
+   {
+    background-color: aqua;
+   }
 </style>
 
 <body>
@@ -81,7 +91,14 @@
     </div>
     <div id="checkout">
         <div id="item"> 
-         <h3 id="cartitem">Cart Item : </h3>
+         <h2>Address</h2>
+         <form id="form">
+            <input type="text" placeholder="Enter House/flat Number"/>
+            <input type="text" placeholder="Enter Your Area"/>
+            <input type="text" placeholder="Enter City"/>
+            <input type="number" placeholder="Enter Pincode"/>
+            <button type="submit">Select Delivery Slot</button>
+         </form>
         </div>
         <div id="bill">
             
@@ -100,38 +117,7 @@
    {
     sum=sum+el.price;
     count++;
-    let item=document.querySelector("#item");
-    let cartitems=document.createElement("div");
-    cartitems.id="cartitems";
-
-    let img1=document.createElement("img");
-    img1.src=el.imgUrl;
-
-    let txt=document.createElement("div");
-    txt.id="txt";
-    let name=document.createElement("h3");
-    name.innerText=el.name;
-    let unit=document.createElement("h3");
-    unit.innerText=el.unit;
-    txt.append(name,unit);
-
-    let price=document.createElement("h3");
-    price.style.marginRight="5%";
-    price.innerText=el.price+""+"₹";
-
-    cartitems.append(img1,txt,price);
-    item.append(cartitems)
    })
-
-
-   let cartitem=document.createElement("h3");
-   cartitem.style.color="red";
-   document.querySelector("#cartitem").append(cartitem);
-   cartitem.innerText=count;
-  
-
-//    let app=document.getElementById("bill");
-//    app.append(sum+delivery_charger);
 
 
 // left hand side
@@ -198,14 +184,14 @@ div2.id="address";
 let p1=document.createElement("h3");
 p1.innerText=sum+delivery_charger+""+"₹";
 let p2=document.createElement("h3");
-p2.innerText="Select Address";
+p2.innerText="Select Delivery Slot";
+div2.append(p1,p2);
 p2.style.cursor="pointer"
-p2.addEventListener("click",fun)
+p2.addEventListener("click",fun);
 function fun()
 {
-    window.location.href="address.html";
+    window.location.href="deliveryslot.html";
 }
-div2.append(p1,p2);
 
 document.getElementById("bill").append(div1,div2);
     
