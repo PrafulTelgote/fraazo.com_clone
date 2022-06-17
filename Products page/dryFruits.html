@@ -39,32 +39,32 @@
         imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/598/original/data/tr:w-256,h-256",
         name:"Dry Dates- 1 kg(Pack of 5*200 gms)",
         unit:"1kg",
-        price:"₹330",
+        price:"330",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/597/original/data/tr:w-256,h-256",
             name:"Dry Dates- 400 gms(Pack of 2*200 gms)",
             unit:"400 g",
-            price:"₹135",
+            price:"135",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/596/original/data/tr:w-256,h-256",
             name:"Dry Dates",
             unit:"200 g",
-            price:"₹70",
+            price:"70",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/580/original/data/tr:w-256,h-256",
             name:"Cashew Tukda",
             unit:"100 g",
-            price:"₹84",
+            price:"84",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/577/original/data/tr:w-256,h-256",
             name:"Cashew",
             unit:"100 g",
-            price:"₹104",
+            price:"104",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/593/original/data/tr:w-256,h-256",
             name:"Kismis",
             unit:"200 g",
-            price:"₹59",
+            price:"59",
         }
     ]
 
@@ -90,7 +90,7 @@ data.map(function(elem){
     unit.innerText= elem.unit
 
     let price= document.createElement("h3")
-    price.innerText= elem.price
+    price.innerText=` ₹ ${elem.price} `;
 
     let btn= document.createElement("button")
     btn.innerText="Add To Cart"

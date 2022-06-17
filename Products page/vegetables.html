@@ -40,57 +40,57 @@
 imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/599/original/data/tr:w-256,h-256",
 name:"Pumpkin Disco",
 unit:"250 g",
-price:"₹19",
+price:"19",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/006/624/original/data/tr:w-256,h-256",
     name:"Lady finger (Bhindi / Okra )",
     unit:"500 g",
-    price:"₹19",
+    price:"19",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VBEE12.png/tr:w-256,h-256",
     name:"Beetroot",
     unit:"500 g",
-    price:"₹29",
+    price:"29",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VSWE12.png/tr:w-256,h-256",
     name:"Sweet Potato",
     unit:"500 g",
-    price:"₹41",
+    price:"51",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/006/605/original/data/tr:w-256,h-256",
     name:"Tomato",
     unit:"1 kg",
-    price:"₹79",
+    price:"79",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VARB12.png/tr:w-256,h-256",
     name:"Arbi",
     unit:"500 g",
-    price:"₹35",
+    price:"35",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VSUR12.png/tr:w-256,h-256",
     name:"Yam (Elephant Food)",
     unit:"500 g",
-    price:"₹40",
+    price:"40",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/338/original/data/tr:w-256,h-256",
     name:"Carrot Orange",
     unit:"500 g",
-    price:"₹29",
+    price:"29",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/369/original/data/tr:w-256,h-256",
     name:"Onion",
     unit:"1 kg",
-    price:"₹16",
+    price:"16",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256",
     name:"Potato / Batata",
     unit:"1 kg",
-    price:"₹30",
+    price:"30",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VMUL12.png/tr:w-256,h-256",
     name:"Raddish",
     unit:"500",
-    price:"₹46",
+    price:"46",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/236/original/data/tr:w-256,h-256",
     name:"Tomato Cherry",
@@ -100,22 +100,22 @@ price:"₹19",
     imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/257/original/data/tr:w-256,h-256",
     name:"Yam Purple (Kandh)",
     unit:"250 g",
-    price:"₹29",
+    price:"29",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/101/original/data/tr:w-256,h-256",
     name:"Pumpkin Green",
     unit:"500 g",
-    price:"₹15",
+    price:"15",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/004/598/original/data/tr:w-256,h-256",
     name:"Sweet Corn Bunch (Bhutta)",
     unit:"1 pc",
-    price:"₹19",
+    price:"19",
 },{
     imgUrl:"https://images.fraazo.com/fraazo-master/VCAB12.png/tr:w-256,h-256",
     name:"Cabbage",
     unit:"1 pc",
-    price:"₹29",
+    price:"29",
 }
 ]
 
@@ -141,7 +141,7 @@ data.map(function(elem){
     unit.innerText= elem.unit
 
     let price= document.createElement("h3")
-    price.innerText= elem.price
+    price.innerText=` ₹ ${elem.price} `;
 
     let btn= document.createElement("button")
     btn.innerText="Add To Cart"

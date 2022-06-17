@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #container{
+            /* display:grid;
+            grid-template-columns: repeat(4,20%); */
+            /* position:relative;  */
+            /* border:1px solid; */
+        }
+        #detDiv{
+            display:flex;
+            justify-content: space-between;
+            margin-top:40px;
+            /* position:absolute; */
+            /* position:static; */
+            /* bottom: 0px; */
+
+         }
+        #box{
+            display:flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width:100%;
+            height:2%;
+            /* height:auto; */
+            /* display:flex; */
+        } 
+        img{
+            width:100%
+        }
+        #checkout{
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            padding:10px 30px 10px 30px;
+           
+        }
+         /* .totalDiv,#checkout{
+            margin:0% 70% 0% 70%;
+        }  */
+
+    </style>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <!-- <div id="mainDiv"> -->
+    <div id="container">
+      <div id="box">
+      <div id="innerimage"></div>
+      <div id="details"></div>
+    </div>
+    </div>
+    <div id="detDiv">
+        <div class="totalDiv">
+        <div id="totalitems"></div>
+        <div id="total"></div>
+    </div>
+        <button id="checkout" onclick="checkoutPage()">Checkout</button>
+    <!-- </div> -->
+</div>
+</body>
+</html>
+<script>
+    // window.screen.width="20%"
+
+    let cartproduct=JSON.parse(localStorage.getItem("cartproduct")) ||[];
+    
+var count=0
+var priceArr=[]
+    cartproduct.forEach(function(el, index){
+        count++
+
+        var image = document.createElement("img");
+        image.setAttribute("id","content")
+        image.setAttribute("src", el.imgUrl);
+        
+
+        var name = document.createElement("h3");
+        name.innerText=el.name;
+
+        var price = document.createElement("p")
+        price.innerText=` ₹ ${el.price} `;
+        
+        priceArr.push(+el.price)
+        
+
+        var unit = document.createElement("p");
+        unit.innerText=el.unit;
+
+        var Remove = document.createElement("button")
+        Remove.innerText="Remove";
+        Remove.addEventListener("click",function(){
+            RemoveItem(el,index);
+        })
+       document.getElementById("innerimage").append(image)
+    // innerimage.setAttribute("id","Image")
+        // innerimage
+       
+        document.getElementById("details").append(name,price,unit,Remove)
+        // Details.setAttribute("id","Details")
+//    Details
+        // btnDiv.append(Remove)
+        document.getElementById("box").append(innerimage,details)
+        // document.querySelector("#container").append(box)
+    })
+
+
+    // console.log(count)
+    if(count==1){
+        document.getElementById("heading").innerText=` My Cart (${count} item) ` 
+        document.getElementById("totalitems").innerText=`${count} item ` 
+    }
+    else{
+document.getElementById("heading").innerText=` My Cart (${count} items) ` 
+document.getElementById("totalitems").innerText=`${count} items ` 
+    }
+
+// console.log(priceArr.length)
+let sum=0;
+for(var i=0;i<priceArr.length;i++){
+sum+=priceArr[i];
+}
+// console.log(sum)
+document.getElementById("total").innerText= `Total= ₹ ${sum}`
+
+function RemoveItem(el,index) {
+        cartproduct.splice(index,1);
+        localStorage.setItem("cartproduct",JSON.stringify(cartproduct))
+        
+        window.location.reload();
+    }
+
+  function checkoutPage(){
+    window.location.href="#"
+  }
+
+</script>
