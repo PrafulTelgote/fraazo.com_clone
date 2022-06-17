@@ -9,28 +9,27 @@
     <style>
        
         #container{
-            /* display:grid;
-            grid-template-columns: repeat(4,20%); */
-            /* position:relative;  */
-            /* border:1px solid; */
+       
+       overflow-y: scroll;
+           
         }
+        .box{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          margin:20px;
+          display:flex;
+
+        
+          
+         } 
         #detDiv{
             display:flex;
             justify-content: space-between;
-            margin-top:40px;
-            /* position:absolute; */
-            /* position:static; */
-            /* bottom: 0px; */
-
+            margin-top:30px;
+         /* border:1px solid; */
+         padding:30px;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
          }
-        #box{
-            display:flex;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            width:100%;
-            height:2%;
-            /* height:auto; */
-            /* display:flex; */
-        } 
+     
         img{
             width:100%
         }
@@ -38,31 +37,45 @@
             background-color: green;
             color: white;
             border-radius: 10px;
-            padding:10px 30px 10px 30px;
-           
+           padding-left: 2%;
+           padding-right: 2%;
+          
+        font-size:medium;
+        
         }
-         /* .totalDiv,#checkout{
-            margin:0% 70% 0% 70%;
-        }  */
-
+      .details{
+        margin-left: 100px;;
+        margin-top:40px;
+      }
+      .totalDiv{
+       margin:10px;
+      }
+      #total{
+        font-size: 22px;
+        font-weight: bolder;
+        color: red;
+       
+      }
+      #totalitems{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-bottom:5px;
+      }
     </style>
 </head>
 <body>
     <h1 id="heading"></h1>
-    <!-- <div id="mainDiv"> -->
+  
     <div id="container">
-      <div id="box">
-      <div id="innerimage"></div>
-      <div id="details"></div>
-    </div>
-    </div>
+     
+</div>
     <div id="detDiv">
         <div class="totalDiv">
         <div id="totalitems"></div>
         <div id="total"></div>
     </div>
         <button id="checkout" onclick="checkoutPage()">Checkout</button>
-    <!-- </div> -->
+ 
 </div>
 </body>
 </html>
@@ -98,23 +111,23 @@ var priceArr=[]
         Remove.addEventListener("click",function(){
             RemoveItem(el,index);
         })
-       document.getElementById("innerimage").append(image)
-    // innerimage.setAttribute("id","Image")
-        // innerimage
-       
-        document.getElementById("details").append(name,price,unit,Remove)
-        // Details.setAttribute("id","Details")
-//    Details
-        // btnDiv.append(Remove)
-        document.getElementById("box").append(innerimage,details)
-        // document.querySelector("#container").append(box)
+        let inImage=document.createElement("div")
+        inImage.append(image)
+        let inDetails=document.createElement("div")
+        inDetails.setAttribute("class","details")
+        inDetails.append(name,unit,price,Remove)
+    
+    let box=document.createElement("div")
+    box.setAttribute("class","box")
+    box.append(inImage,inDetails);
+    document.getElementById("container").append(box)
     })
 
 
     // console.log(count)
     if(count==1){
         document.getElementById("heading").innerText=` My Cart (${count} item) ` 
-        document.getElementById("totalitems").innerText=`${count} item ` 
+       document.getElementById("totalitems").innerText=`${count} item ` 
     }
     else{
 document.getElementById("heading").innerText=` My Cart (${count} items) ` 
@@ -127,7 +140,9 @@ for(var i=0;i<priceArr.length;i++){
 sum+=priceArr[i];
 }
 // console.log(sum)
-document.getElementById("total").innerText= `Total= ₹ ${sum}`
+let totalSum=document.getElementById("total").innerText= `Total= ₹ ${sum}`
+
+
 
 function RemoveItem(el,index) {
         cartproduct.splice(index,1);

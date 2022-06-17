@@ -19,6 +19,39 @@ p{
     grid-gap: 1.5%;
     margin-right: 7%;
 }
+
+@media all and (min-width: 451px) and (max-width:750px){
+    #container{
+        
+        width:100%;
+        display:grid;
+        grid-template-columns: repeat(2,40%);
+        height:15%;
+        grid-gap: 1.5%;
+        /* margin-right: 7%; */
+    }  
+    #div1{
+        margin-right: 10px;
+
+    }
+    
+}
+
+@media all and (min-width: 100px) and (max-width:450px){
+    #container{
+       
+        width:100%;
+        display:grid;
+        grid-template-columns: repeat(1,70%);
+        height:12%;
+        grid-gap: 1.5%;
+        /* margin-right: 7%; */
+    }  
+    #div1{
+        margin-right: 20px;
+    }
+    
+}
 .OuterDiv{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
