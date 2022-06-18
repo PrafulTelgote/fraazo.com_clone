@@ -96,7 +96,7 @@
 
    let data=JSON.parse(localStorage.getItem("cartproduct")) || [];
    
-   data.forEach((el)=>
+   data.forEach((el,index)=>
    {
     sum=sum+el.price;
     count++;
@@ -113,7 +113,13 @@
     name.innerText=el.name;
     let unit=document.createElement("h3");
     unit.innerText=el.unit;
-    txt.append(name,unit);
+    let remove=document.createElement("button");
+    remove.innerText="Remove";
+    remove.addEventListener("click",function()
+    {
+        RemoveItem(el,index);
+    })
+    txt.append(name,unit,remove);
 
     let price=document.createElement("h3");
     price.style.marginRight="5%";
@@ -128,6 +134,14 @@
    cartitem.style.color="red";
    document.querySelector("#cartitem").append(cartitem);
    cartitem.innerText=count;
+
+   //remove item form cart
+   function  RemoveItem(el,index)
+   {
+    data.splice(index,1);
+    localStorage.setItem("cartproduct",JSON.stringify(data));
+    window.location.reload();
+   }
   
 
 //    let app=document.getElementById("bill");
