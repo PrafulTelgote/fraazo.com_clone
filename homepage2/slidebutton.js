@@ -12,6 +12,7 @@ function myfun(){
     }
     else{
     alert("SMS has been sent to your Mobile.!!");
+    window.location.href="index.html"
     }
 }
 
