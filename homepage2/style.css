@@ -145,10 +145,11 @@ input::placeholder {
 
 #bottom{
     display: flex;
+    margin-top: 50px;
 }
 #mobileapp{
     width: 600px;
-    top:400px;
+    /* top:400px; */
     left: 130px;
     right: 15px;
     height: 600px;
