@@ -83,6 +83,42 @@
    {
     background-color: aqua;
    }
+   #express
+   {
+    display: flex;
+    gap: 10%;
+
+   }
+   .exp
+   {
+    width: 30%;
+    border: 0.5px solid;
+    text-align: center;
+    border-radius: 10px;
+   }
+   .exp1
+   {
+    width: 70%;
+    border: 0.5px solid;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+   .exp1>button
+   {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5%;
+    background-color: transparent;
+    border: 0.5px solid;
+    border-radius: 3px;
+   }
+   .exp1>button:hover
+   {
+    font-size: large;
+   }
 </style>
 
 <body>
@@ -91,7 +127,18 @@
     </div>
     <div id="checkout">
         <div id="item"> 
-         <h2>Delivery Slot</h2>
+         <h2>Delivery Type</h2>
+         <div id="express" >
+            <div class="exp" onclick="payment()">
+               <h4>Express Delivery</h4>
+               <h6>90 mins Express</h6>
+            </div>
+            <div class="exp1">
+                <h4>Schedule Your Delivery</h4>
+                <button onclick="payment()">Today</button>
+                <button onclick="payment()">Tomorrow</button>
+            </div>
+         </div>
         </div>
         <div id="bill">
             
@@ -100,6 +147,16 @@
 </body>
 </html>
 <script>
+  let payment=()=>
+  {
+    
+    setTimeout(()=>
+    {
+        fun()
+    },1000);
+  }
+
+
     let sum=0;
     let count=0;
     let delivery_charger=30;

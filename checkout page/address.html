@@ -31,6 +31,7 @@
         box-shadow: 0 1px 10px rgb(0 0 0 / 6%);
         border-radius: 5px;
         padding: 20px;
+        
     }
     #bill
     {
@@ -92,13 +93,15 @@
     <div id="checkout">
         <div id="item"> 
          <h2>Address</h2>
-         <form id="form">
-            <input type="text" placeholder="Enter House/flat Number"/>
-            <input type="text" placeholder="Enter Your Area"/>
-            <input type="text" placeholder="Enter City"/>
-            <input type="number" placeholder="Enter Pincode"/>
-            <button type="submit">Select Delivery Slot</button>
-         </form>
+         <div id="addadress">
+            <form id="form">
+                <input type="text" id="house" placeholder="Enter House/flat Number" required/>
+                <input type="text" id="area" placeholder="Enter Your Area" required/>
+                <input type="text" id="city" placeholder="Enter City" required/>
+                <input type="number" id="pin" placeholder="Enter Pincode" required/>
+                <button type="submit" onclick="getdata()">Select Delivery Slot</button>
+             </form>
+         </div>
         </div>
         <div id="bill">
             
@@ -107,6 +110,33 @@
 </body>
 </html>
 <script>
+
+    function getdata()
+    {
+        event.preventDefault();
+        let form=document.querySelector("#form");
+
+        let house=form.house.value;
+        let area=form.area.value;
+        let city=form.city.value;
+        let pincode=form.pin.value;
+        let address=new constr(house,area,city,pincode);
+        localStorage.setItem("address_user",JSON.stringify(address));
+
+        setTimeout(() => {
+            fun();
+        }, 1000);
+    }
+
+    function constr(h,a,c,p)
+    {
+     this.house=h;
+     this.area=a;
+     this.city=c;
+     this.pin=p;
+    }
+
+
     let sum=0;
     let count=0;
     let delivery_charger=30;
@@ -190,7 +220,18 @@ p2.style.cursor="pointer"
 p2.addEventListener("click",fun);
 function fun()
 {
-    window.location.href="deliveryslot.html";
+    let address_user=JSON.parse(localStorage.getItem("address_user")) || [];
+    let length=address_user.length;
+    if(length==0)
+    {
+        alert("Fil the data");
+       
+    }
+    else
+    {
+        window.location.href="deliveryslot.html"; 
+    }
+    
 }
 
 document.getElementById("bill").append(div1,div2);
