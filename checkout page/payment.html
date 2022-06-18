@@ -83,6 +83,47 @@
    {
     background-color: aqua;
    }
+   #card
+   {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+   }
+   #menu
+   {
+    width: 30%;
+    
+   }
+   #menu>h5{
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    border: 1px solid;
+   }
+   #menu>h5:hover
+   {
+    background-color: rgb(228, 225, 225);
+   }
+   #item>div
+   {
+    display: flex;
+    gap: 2%;
+   }
+   #cash
+   {
+    display: none;
+   }
+   #thanks
+   {
+    display: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+   }
+  
+
 </style>
 
 <body>
@@ -91,15 +132,45 @@
     </div>
     <div id="checkout">
         <div id="item"> 
-         <h2>Delivery Slot</h2>
+         <h2>Payment</h2>
+        <div>
+            <div id="menu">
+                <h5 id="card1" onclick="card1()">Card</h5>
+                <h5 id="cash1" onclick="cash1()">Cash</h5>
+            </div>
+            <div id="card"><input type="number" placeholder="Enter Your Card Number" />
+               <input type="date"   placeholder="Exp date"/><input type="number" placeholder="Enter Cvv Here"/>
+               <input type="text" placeholder="card Holder name"/></div>
+               <div id="cash">
+                    <h1> Thank for Select COD</h1>
+               </div>
+        </div>
         </div>
         <div id="bill">
             
         </div>
+       
+    </div>
+    <div id="thanks">
+        <h1>Thank You For Purchesing</h1>
+        <h1> Your Order Will Be Delivery Soon</h1>
     </div>
 </body>
 </html>
 <script>
+let card1=()=>
+{
+    document.getElementById("card").style.display="flex";
+    document.getElementById("cash").style.display="none";
+}
+let cash1=()=>
+{
+    document.getElementById("cash").style.display="block";
+    document.getElementById("card").style.display="none";
+}
+
+
+
     let sum=0;
     let count=0;
     let delivery_charger=30;
@@ -177,13 +248,23 @@ div2.id="address";
 let p1=document.createElement("h3");
 p1.innerText=sum+delivery_charger+""+"₹";
 let p2=document.createElement("h3");
-p2.innerText="Select Delivery Slot";
+p2.innerText="PayAble Amount";
 div2.append(p1,p2);
 p2.style.cursor="pointer"
 p2.addEventListener("click",fun);
 function fun()
 {
-    window.location.href="deliveryslot.html";
+    
+    setTimeout(() => {
+        document.getElementById("checkout").style.display="none";
+        document.getElementById("thanks").style.display="block";
+    }, 1000);
+
+    setTimeout(() => {
+        window.location.href="#home";
+        alert("ok");
+    }, 3000);
+
 }
 
 document.getElementById("bill").append(div1,div2);
