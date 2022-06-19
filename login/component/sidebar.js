@@ -1,3 +1,6 @@
+let userData = JSON.parse(localStorage.getItem("userData"));
+console.log(userData);
+
 function showSidebar() {
   return `
 
@@ -10,7 +13,7 @@ function showSidebar() {
           class="frz-w-100"
         />
         <!--MObile no.-->
-        <h3>+919450987009</h3>
+        <h3>+91 ${userData.mobile}</h3>
       </div>
 
       <!--Menu item-->

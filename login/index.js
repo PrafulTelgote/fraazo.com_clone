@@ -35,21 +35,27 @@ menus.forEach((menu) => {
 
 let urlPath = window.location.pathname;
 
-console.log(urlPath);
-if (urlPath == "/credits.html") {
+// console.log(urlPath);
+if (urlPath.includes("/credits.html")) {
   document
     .querySelector("#sidebar > ul > li:nth-child(2) > a")
     .classList.add("active");
-} else if (urlPath == "/orders.html") {
+} else if (urlPath.includes("/orders.html")) {
   document
     .querySelector("#sidebar > ul > li:nth-child(1) > a")
     .classList.add("active");
-} else if (urlPath == "/invite.html") {
+} else if (urlPath.includes("/invite.html")) {
   document
     .querySelector("#sidebar > ul > li:nth-child(3) > a")
     .classList.add("active");
-} else if (urlPath == "/help.html") {
+} else if (urlPath.includes("/help.html")) {
   document
     .querySelector("#sidebar > ul > li:nth-child(4) > a")
     .classList.add("active");
 }
+
+let logout = document.querySelector("#sidebar > ul > li:nth-child(5) > a");
+logout.addEventListener("click", () => {
+  localStorage.clear();
+  window.location = "./mobileOtp/otp.html";
+});

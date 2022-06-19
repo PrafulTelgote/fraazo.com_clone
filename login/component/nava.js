@@ -1,3 +1,6 @@
+let userData = JSON.parse(localStorage.getItem("userData"));
+console.log(userData);
+
 function nava() {
   return `  <div >
     <img src="images/download.png" alt="">
@@ -16,7 +19,7 @@ function nava() {
     <img src="images/icons8-wallet-50.png" alt=""><span>Credit</span>
 </div>
 <div class="cart" >
-    <img src="images/icons8-person-32.png" alt=""><span>Login</span>
+    <img src="images/icons8-person-32.png" alt=""><span>${userData.firstname}</span>
 </div>
 </div>
 

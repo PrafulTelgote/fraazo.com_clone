@@ -11,7 +11,7 @@
         box-sizing: border-box;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
-      
+
       #popup-container {
         background-color: #fff;
         /* display: flex; */
@@ -64,15 +64,11 @@
         justify-content: flex-end;
         cursor: pointer;
       }
-
-      .pouphide {
-        display: none;
-      }
     </style>
   </head>
   <body>
     <div class="background"></div>
-    <button onclick="showPopUP()">Show Popup</button>
+    <!-- <button onclick="showPopUP()">Show Popup</button -->
     <div id="popup-container" class="pouphide">
       <div id="cross">X</div>
       <div id="heading">
@@ -121,12 +117,27 @@
         <input type="radio" name="Miss" id="Miss" value="Miss" />
         <label for="Miss">Miss</label>
       </div>
-      <button id="button" type="submit">Submit</button>
+      <button id="button" onclick="next()" type="submit">Submit</button>
     </div>
   </body>
 </html>
 
 <script>
+  function next() {
+    // console.log(event);
+    let firstname = document.querySelector("#firstname #inputfield").value;
+    let email = document.querySelector("#mail #inputfield").value;
+    let mobile = document.querySelector("#mobile #inputfield").value;
+    let userData = {
+      firstname,
+      email,
+      mobile,
+    };
+    // console.log(userData);
+    localStorage.setItem("userData", JSON.stringify(userData));
+    window.location = "../orders.html";
+  }
+
   let showingPopup = false;
   let background = document.querySelector(".background");
   function showPopUP() {
