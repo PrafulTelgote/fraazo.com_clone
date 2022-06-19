@@ -119,7 +119,7 @@ data.map(function(elem){
     let unit= document.createElement("p")
     unit.innerText= elem.unit
 
-    let price= document.createElement("h3")
+    let price= document.createElement("h4")
     price.innerText=` ₹ ${elem.price} `;
 
     let btn= document.createElement("button")
@@ -138,7 +138,7 @@ data.map(function(elem){
     detDiv.append(name,unit,innerDiv)
     div.append(imgDiv,detDiv)
     cont.append(div)
-    div.addEventListener("click",func);
+    imgDiv.addEventListener("click",func);
    function func()
    {
      localStorage.setItem("viewproduct",JSON.stringify(elem));
@@ -147,7 +147,10 @@ data.map(function(elem){
    btn.addEventListener("click",btnfun)
    function btnfun()
    {
-    alert("Item add to Cart")
+    btn.style.backgroundColor="green";
+    btn.innerText="Added to cart"
+   btn.style.color="white";
+    alert("Item added to Cart")
     cartproduct.push(elem);
      localStorage.setItem("cartproduct",JSON.stringify(cartproduct));
    }
