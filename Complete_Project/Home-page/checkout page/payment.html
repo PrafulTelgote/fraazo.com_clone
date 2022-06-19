@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="/Home-page/Nav/navarbar-fraazo.css">
+  <script src="/Home-page/Nav/main.js"></script>
+</head>
+<style>
+    body{
+        background-color: #ffffff;
+    }
+    #process
+    {
+        width: 100%;
+        height: 100px;
+        background-color: #eff9f7
+        ;
+    }
+    #checkout
+    {
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    gap: 5%;
+    }
+    #item
+    {
+        width: 70%;
+        height: 100%;
+        box-shadow: 0 1px 10px rgb(0 0 0 / 6%);
+        border-radius: 5px;
+        padding: 20px;
+    }
+    #bill
+    {
+        width: 30%;
+        height: 500px;
+       box-shadow: 0 1px 10px rgb(0 0 0 / 6%);
+    }
+    #address
+    {
+    color: #fff;
+    width: 90%;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(91.88deg,#47be9b 12.32%,#47c09d);
+    box-shadow: 0 2px 8pxrgba(18,145,114,.32);
+    margin: auto;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    }
+    #address>h3{
+        padding: 0% 2% 0% 2%;
+    }
+    #table
+    {
+        width: 90%;
+        margin: auto;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+    }
+    .des
+    {
+        width: 70%;
+    }
+   #form
+   {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+   #form>button
+   {
+    background-color: #47be9b;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+   }
+   #form>button:hover
+   {
+    background-color: aqua;
+   }
+   #card
+   {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+   }
+   #menu
+   {
+    width: 30%;
+    
+   }
+   #menu>h5{
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    border: 1px solid;
+   }
+   #menu>h5:hover
+   {
+    background-color: rgb(228, 225, 225);
+   }
+   #item>div
+   {
+    display: flex;
+    gap: 2%;
+   }
+   #cash
+   {
+    display: none;
+   }
+   #thanks
+   {
+    display: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+   }
+  
+
+</style>
+
+<body>
+    <!-- Navbar -->
+
+<div id="navbar">
+    <div>
+    <a href="/Home-page/index.html"> <img src="images/download.png" alt="" /></a> 
+    </div>
+    <div id="location">
+      <img src="images/location.png" alt="" /> <span>Powai</span>
+    </div>
+    <div id="search">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Find fresh  vegetables,fruits and dairy"
+      />
+    </div>
+  
+   <a href="/Home-page/checkout page/cart.html"> <div class="cartdiv">
+      <img src="images/icons8-shopping-cart-with-money-24.png" alt="" /><span
+        >Cart</span
+      >
+    </div></a>
+    <div class="cartdiv" id="walet">
+      <img src="images/icons8-wallet-50.png" alt="" /><span>Credit</span>
+    </div>
+    <div class="cartdiv">
+      <a href="/Home-page/login/mobileOtp/otp.html">
+        <img src="images/icons8-person-32.png" alt="" /><span>Login</span>
+      </a>
+    </div>
+  </div>
+  
+  <div id="map"></div>
+    <div id="process">
+
+    </div>
+    <div id="checkout">
+        <div id="item"> 
+         <h2>Payment</h2>
+        <div>
+            <div id="menu">
+                <h5 id="card1" onclick="card1()">Card</h5>
+                <h5 id="cash1" onclick="cash1()">Cash</h5>
+            </div>
+            <div id="card"><input type="number" placeholder="Enter Your Card Number" />
+               <input type="date"   placeholder="Exp date"/><input type="number" placeholder="Enter Cvv Here"/>
+               <input type="text" placeholder="card Holder name"/></div>
+               <div id="cash">
+                    <h1> Thank for Select COD</h1>
+               </div>
+        </div>
+        </div>
+        <div id="bill">
+            
+        </div>
+       
+    </div>
+    <div id="thanks">
+        <h1>Thank You For Purchesing</h1>
+        <h1> Your Order Will Be Delivery Soon</h1>
+    </div>
+</body>
+</html>
+<script>
+let card1=()=>
+{
+    document.getElementById("card").style.display="flex";
+    document.getElementById("cash").style.display="none";
+}
+let cash1=()=>
+{
+    document.getElementById("cash").style.display="block";
+    document.getElementById("card").style.display="none";
+}
+
+
+
+    let sum=0;
+    let count=0;
+    let delivery_charger=30;
+
+   var address=JSON.parse(localStorage.getItem("address_user"));
+   console.log(address);
+   var data=JSON.parse(localStorage.getItem("cartproduct")) || [];
+   
+   data.forEach((el)=>
+   {
+    sum=sum+el.price;
+    count++;
+   })
+
+
+// left hand side
+
+//bill details
+let div1=document.createElement("div");
+let h1=document.createElement("h1");
+h1.innerText="Bill Details";
+let table=document.createElement("table");
+table.id="table";
+
+let tr1=document.createElement("tr");
+let td1=document.createElement("td");
+td1.class="des";
+td1.innerText=count+" x Total Item Price";
+let td2=document.createElement("td");
+td2.innerText=sum+""+"₹";
+tr1.append(td1,td2);
+
+
+let tr2=document.createElement("tr");
+let td3=document.createElement("td");
+td3.class="des";
+td3.style.color="#86d4c2"
+td3.innerText="Price Savings";
+let td4=document.createElement("td");
+td4.innerText=sum+""+"₹";
+td4.style.color="#86d4c2"
+tr2.append(td3,td4);
+
+let tr3=document.createElement("tr");
+let td5=document.createElement("td");
+td3.class="des";
+td5.innerText="Cart Amount";
+let td6=document.createElement("td");
+td6.innerText=sum+""+"₹";
+tr3.append(td5,td6);
+
+let tr4=document.createElement("tr");
+let td7=document.createElement("td");
+td7.class="des";
+td7.innerText="Delivery Charges";
+let td8=document.createElement("td");
+td8.innerText=delivery_charger+""+"₹";
+tr4.append(td7,td8);
+
+let tr5=document.createElement("tr");
+let td9=document.createElement("td");
+td9.class="des";
+td9.innerText="To Pay(Saved 8)";
+let td10=document.createElement("td");
+td10.style.color="#ff7220";
+td10.style.fontWeight="bold"
+td10.innerText=sum+delivery_charger+""+"₹";
+tr5.append(td9,td10);
+table.append(h1,tr1,tr2,tr3,tr4,tr5);
+div1.append(table);
+
+
+//address button
+
+let div2=document.createElement("div");
+div2.id="address";
+let p1=document.createElement("h3");
+p1.innerText=sum+delivery_charger+""+"₹";
+let p2=document.createElement("h3");
+p2.innerText="PayAble Amount";
+div2.append(p1,p2);
+p2.style.cursor="pointer"
+p2.addEventListener("click",fun);
+function fun()
+{
+    
+    setTimeout(() => {
+        document.getElementById("checkout").style.display="none";
+        document.getElementById("thanks").style.display="block";
+    }, 1000);
+
+    setTimeout(() => {
+        window.location.href="/Home-page/index.html";
+    }, 3000);
+
+}
+
+document.getElementById("bill").append(div1,div2);
+
+
+    
+</script>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="fraazo-stylecss/navarbar-fraazo.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="global.css" />
+
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px 200px;
+        /* border: 1px solid red; */
+        /* width: 60%; */
+        gap: 20px;
+        margin: auto;
+        /* padding-right: 0px; */
+      }
+      #container > div {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        margin: 10px;
+
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      p {
+        color: royalblue;
+      }
+      body > div.wrapper > div:nth-child(2) {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="wrapper">
+      <div id="sidebar"></div>
+      <div>
+        <h2>Help & Support</h2>
+        <div id="container">
+          <div>
+            <lottie-player
+              src="https://assets1.lottiefiles.com/private_files/lf30_1phqfxry.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 130px"
+              loop
+              autoplay
+            ></lottie-player>
+            <p>Chat With Us</p>
+          </div>
+          <div>
+            <lottie-player
+              src="https://assets10.lottiefiles.com/private_files/lf30_wbszjekz.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 130px"
+              loop
+              autoplay
+            ></lottie-player>
+            <p>Call Us</p>
+          </div>
+          <div>
+            <lottie-player
+              src="https://assets1.lottiefiles.com/packages/lf20_ssIwdK.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 130px"
+              loop
+              autoplay
+            ></lottie-player>
+            <p>FAQ'S</p>
+          </div>
+          <div>
+            <lottie-player
+              src="https://assets4.lottiefiles.com/packages/lf20_rp60xrfk.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 130px"
+              loop
+              autoplay
+            ></lottie-player>
+            <p>Privacy Policy</p>
+          </div>
+          <div>
+            <lottie-player
+              src="https://assets2.lottiefiles.com/packages/lf20_cmxmy8p4.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 130px"
+              loop
+              autoplay
+            ></lottie-player>
+            <p>Terms & conditions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>
+<script type="module" src="index.js"></script>

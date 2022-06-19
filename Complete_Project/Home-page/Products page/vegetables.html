@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="/Home-page/Nav/navarbar-fraazo.css">
+    <script src="/Home-page/Nav/main.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+
+<div id="navbar">
+    <div>
+    <a href="/Home-page/index.html"> <img src="images/download.png" alt="" /></a> 
+    </div>
+    <div id="location">
+      <img src="images/location.png" alt="" /> <span>Powai</span>
+    </div>
+    <div id="search">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Find fresh  vegetables,fruits and dairy"
+      />
+    </div>
+  
+   <a href="/Home-page/checkout page/cart.html"> <div class="cartdiv">
+      <img src="images/icons8-shopping-cart-with-money-24.png" alt="" /><span
+        >Cart</span
+      >
+    </div></a>
+    <div class="cartdiv" id="walet">
+      <img src="images/icons8-wallet-50.png" alt="" /><span>Credit</span>
+    </div>
+    <div class="cartdiv">
+      <a href="/Home-page/login/mobileOtp/otp.html">
+        <img src="images/icons8-person-32.png" alt="" /><span>Login</span>
+      </a>
+    </div>
+  </div>
+  
+  <div id="map"></div>
+    <div id="div1">
+        <h3>
+            <a href="mangoes.html">Mangoes</a>
+        </h3>
+        <h3>
+            <a href="fruits.html">Fruits</a>
+        </h3>
+        <h3>
+            <a href="dryFruits.html">Dry Fruits</a>
+        </h3>
+        <h3>
+            <a href="kitchenStaples.html">Kitchen Staples</a>
+        </h3>
+        <h3>
+            <a href="vegetables.html">Vegetables</a>
+        </h3>
+    </div>
+    <div id="container"></div>
+</div>
+</body>
+</html>
+<script>
+     let cartproduct=JSON.parse(localStorage.getItem("cartproduct")) || [];
+   var data=[
+{
+imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/599/original/data/tr:w-256,h-256",
+name:"Pumpkin Disco",
+unit:"250 g",
+price:19,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/006/624/original/data/tr:w-256,h-256",
+    name:"Lady finger (Bhindi / Okra )",
+    unit:"500 g",
+    price:19,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VBEE12.png/tr:w-256,h-256",
+    name:"Beetroot",
+    unit:"500 g",
+    price:29,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VSWE12.png/tr:w-256,h-256",
+    name:"Sweet Potato",
+    unit:"500 g",
+    price:51,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/006/605/original/data/tr:w-256,h-256",
+    name:"Tomato",
+    unit:"1 kg",
+    price:79,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VARB12.png/tr:w-256,h-256",
+    name:"Arbi",
+    unit:"500 g",
+    price:35,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VSUR12.png/tr:w-256,h-256",
+    name:"Yam (Elephant Food)",
+    unit:"500 g",
+    price:40,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/338/original/data/tr:w-256,h-256",
+    name:"Carrot Orange",
+    unit:"500 g",
+    price:29,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/369/original/data/tr:w-256,h-256",
+    name:"Onion",
+    unit:"1 kg",
+    price:16,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256",
+    name:"Potato / Batata",
+    unit:"1 kg",
+    price:30,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VMUL12.png/tr:w-256,h-256",
+    name:"Raddish",
+    unit:"500",
+    price:46,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/236/original/data/tr:w-256,h-256",
+    name:"Tomato Cherry",
+    unit:"200 g",
+    price:59,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/257/original/data/tr:w-256,h-256",
+    name:"Yam Purple (Kandh)",
+    unit:"250 g",
+    price:29,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/101/original/data/tr:w-256,h-256",
+    name:"Pumpkin Green",
+    unit:"500 g",
+    price:15,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-prod/images/images/000/004/598/original/data/tr:w-256,h-256",
+    name:"Sweet Corn Bunch (Bhutta)",
+    unit:"1 pc",
+    price:19,
+},{
+    imgUrl:"https://images.fraazo.com/fraazo-master/VCAB12.png/tr:w-256,h-256",
+    name:"Cabbage",
+    unit:"1 pc",
+    price:29,
+}
+]
+
+
+data.map(function(elem){
+    
+    let div= document.createElement("div")
+    div.setAttribute("class","OuterDiv")
+
+    let img= document.createElement("img")
+    // img.src= elem.imageUrl
+    img.setAttribute('src', elem.imgUrl)
+
+    let imgDiv= document.createElement("div")
+    imgDiv.setAttribute("class","imgDiv")
+    imgDiv.append(img)
+
+
+    let name= document.createElement("p")
+    name.innerText= elem.name
+
+    let unit= document.createElement("p")
+    unit.innerText= elem.unit
+
+    let price= document.createElement("h3")
+    price.innerText=` ₹ ${elem.price} `;
+
+    let btn= document.createElement("button")
+    btn.innerText="Add To Cart"
+    btn.setAttribute("class","btn")
+    
+
+
+    let innerDiv= document.createElement("div")
+    innerDiv.setAttribute("class","innerDiv")
+    innerDiv.append(price,btn)
+
+
+    let detDiv= document.createElement("div")
+    detDiv.setAttribute("class","detDiv")
+    detDiv.append(name,unit,innerDiv)
+    div.append(imgDiv,detDiv)
+   document.getElementById("container").append(div);
+//    div.addEventListener("click",func);
+    imgDiv.addEventListener("click",func);
+   function func()
+   {
+     localStorage.setItem("viewproduct",JSON.stringify(elem));
+     window.location.href="viewproduct.html";
+   }
+   btn.addEventListener("click",btnfun)
+   function btnfun()
+   {
+    alert("Item add to Cart")
+    cartproduct.push(elem);
+     localStorage.setItem("cartproduct",JSON.stringify(cartproduct));
+   }
+
+
+})
+
+</script>
+
+
+<script src="/fraazo.com_clone/Home-page/fraazojs/main.js"></script>

@@ -1,0 +1,110 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar{
+    display: flex;
+
+  
+   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+   
+   
+}
+#navbar>div{
+   
+    margin: 10px;
+}
+
+/* #location{
+position: relative;
+top: 20px;
+opacity: 0.8;
+
+} */
+
+#search{
+   
+  
+    padding:20px ;
+
+}
+input{
+    height: 30px;
+    width: 500px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 5px;
+
+   
+}
+input[type="search"] {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+  }
+  
+  input[type="search"]::placeholder {
+    color: #bbb;
+  }
+.cartdiv{
+    padding: 30px;
+   
+}
+
+/* .cartdiv span{
+font-size: 15px;
+position: relative;
+left: 7%;
+bottom: 10px;
+opacity: 0.6;
+} */
+.cartdiv :hover{
+    opacity: 1;
+   
+ 
+}
+.cartdiv img{
+    opacity: 0.6;
+    
+}
+
+/* #walet{
+    position: relative;
+    left: -50px;
+} */
+
+#walet >img{
+  
+  width: 50px;
+  height: 30px;
+}
+
+.para{
+height: 550px;
+width: 42%;   
+border: 1px solid green;
+
+}
+
+/* .serchlocation{
+    position: relative;
+    top: 60px;
+   
+} */
+
+
+/* .window{
+    color: rgb(124, 124, 212);
+    background-color: white;
+    font-size: 20px;
+    position: relative;
+   bottom: 330px;
+} */

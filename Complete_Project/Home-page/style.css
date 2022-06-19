@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&family=Varela+Round&display=swap');
+.categery{
+    display: flex;
+    box-sizing: border-box;
+}
+.box1{
+    width: 23%;
+    margin: 15px 15px 15px 15px;
+    padding: auto;
+    cursor: pointer;
+}
+#box-img{
+    width: 100%;
+}
+#mobileapp{
+    width: 50%;
+    height: 712px;
+    
+    
+}
+#box{
+    height: 712px;
+    width: 50%;
+    float: right;
+    margin-right: 50px;
+    margin-left: 100px;
+}
+#box h1{
+font-size: 40px;
+color: #1A201E;
+padding: 0px 0px 18px;
+
+}
+#box p{
+    font-size: 18px;
+    color: #1A201E;
+    padding: 0px 140px 40px 0px;
+}
+
+input {
+    display: block;
+    /* width: 550px; */
+    width: 100%;
+    height: 72px;
+    padding: 0 20px;
+}
+
+input,
+input::placeholder {
+    font: 20px/3 sans-serif;
+}
+.googleplay a{
+    color: #1890ff;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    background-color: transparent;
+    outline: 0;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+    cursor: pointer;
+    transition: color .3s;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    cursor: pointer;
+    padding-right: 15px!important;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+.appleplay a{
+        color: #1890ff;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        background-color: transparent;
+        outline: 0;
+        outline-color: initial;
+        outline-style: initial;
+        outline-width: 0px;
+        cursor: pointer;
+        transition: color .3s;
+        transition-property: color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+    }
+.available{
+    font-size: 18px;
+    opacity: .6;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    align-self: center;    
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    line-height: 140%;
+    box-sizing: border-box;
+    margin: 15px 15px 15px 15px;
+
+}
+#submit1{
+    display: block;
+    /* width: 595px; */
+    width: 100%;
+    height: 72px;
+    padding: 0 20px;
+    background: linear-gradient(91.88deg,#5dc6ad 12.32%,#4cdfbc);
+    transition: .2s ease-in;
+    opacity: 0.5;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 50px;
+}
+#avil{
+    display: flex
+}
+#slidebutton{
+    display: flex;
+    margin: 15px 15px 20px;
+}
+#slidebutton button{
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#bottom{
+    display: flex;
+    margin-top: 50px;
+}
+#mobileapp{
+    width: 600px;
+    /* top:400px; */
+    left: 130px;
+    right: 15px;
+    height: 600px;
+    
+    position: absolute;
+    
+}
+#background{
+    width: 720px;
+    /* top: 20px;
+    left: 40px; */
+    position: relative;
+}
+
