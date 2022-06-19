@@ -16,7 +16,7 @@ function showSidebar() {
       <!--Menu item-->
       <ul>
         <li>
-          <a href="#" class="active">
+          <a href="#">
             <span class="icon"
               ><img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAATCAYAAACZZ43PAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFTSURBVHgB7ZQxb8IwEIXvxVGaNsyJ2goo3TvDDDs7e3f+Red2756dnc5lLnuIIoHMjgqo8fUMtEIhElSsvSWxfe/znc9nUIlFURQ6vt8FUZNgKmzwblarWGs9L/qiRBwo33uRlYDZGRI4EKcOMc/z5bovkMW+v1sEuL7fZHCYM/o6TZMNtFodKoUndeV1ZDjY93eKAAN+sLv9iK3pLBvbLzMaRf8DwF8NuxC7SlFPhsFJKomQoIbTySSGPXF1efEq4X0AZsyEJgiRJDMoyKQq0Ew8YqYGgFb+ueq55HmhXTXGxDbX67taSGwq0zSL99U39VrbgJLZJItv6/W2gFqibZx9BgdlNIwBMY2L8zkhlvnkKGBXvqRk/o1K7OwU/gEWsF5v29Ol+1NFbEy0VTuLTS/I7XuWn5MBG4j0wyzNHn8flEiup8KOfMTAjv5aLkf2cfkGJYWOd3BeY1QAAAAASUVORK5CYII="

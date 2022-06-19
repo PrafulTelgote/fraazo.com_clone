@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
-        #container{
-             width: 400px;
-            /* border: 1px solid black; */
-            border-radius: 15px;
-            margin: auto;
-            height: 280px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            justify-content: center;
-            padding-left: 80px;
-            padding-top: 20px;
-           
-           
-        }
-        #button{
-            width: 30%;
-	padding: 10px 30px;
-	cursor: pointer;
-	display: block;
-	/* margin: auto; */
-    margin-left: 50px;
-	background: #3adde2;
-	border: 0;
-	outline: none;
-	border-radius: 30px;
-        }
-        #Mo{
-            width: 70%;
-	padding:10px 0;
-	margin:5px 0;
-	border-left:0;
-	border-top:0;
-	border-right:0;
-	border-bottom: 1px solid #999;
-	outline:none;
-	background: transparent;
-        }
-
+      #container {
+        width: 400px;
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        margin: auto;
+        height: 280px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        justify-content: center;
+        padding-left: 80px;
+        padding-top: 20px;
+      }
+      #button {
+        width: 30%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        /* margin: auto; */
+        margin-left: 50px;
+        background: #3adde2;
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+      }
+      #Mo {
+        width: 70%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: transparent;
+      }
+      #container > div::before {
+        content: "+91";
+        margin-right: 5px;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div id="container">
-        <h3>Welcome to Frazzo!</h3>
-        <h4>Sign In to track your Order and More </h4>
-        <input type="Number"  name="" id="Mo" placeholder="Enter Your Mobile Number">
-        <p>We will send you OTP on this number</p>
-        <button id="button">Get OTP</button>
-
+      <h3>Welcome to Frazzo!</h3>
+      <h4>Sign In to track your Order and More</h4>
+      <div>
+        <input
+          type="Number"
+          id="Mo"
+          value="+91"
+          placeholder="Enter Your Mobile Number"
+        />
+      </div>
+      <p>We will send you OTP on this number</p>
+      <button id="button">Get OTP</button>
     </div>
-</body>
+  </body>
 </html>
+<script>
+  document.querySelector("#button").addEventListener("click", otpgenrate);
+  function otpgenrate() {
+    let OTP = Math.floor(100000 + Math.random() * 900000);
+    console.log(OTP);
+    let mobile = document.querySelector("#Mo").value;
+    let otpData = {
+      mobile,
+      OTP,
+    };
+    let mobileNo = localStorage.setItem("mobNo", JSON.stringify(otpData));
+    alert(OTP);
+  }
+  //   otpgenrate();
+</script>
