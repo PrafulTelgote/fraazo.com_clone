@@ -1,0 +1,48 @@
+*{
+    margin: 10px;
+    padding: 0px;
+
+}
+
+#footer_container{
+    display: flex;
+background-color: #004526;
+font-size: 25px;
+color: white ;
+font-family: "Calibri";
+height:500px;
+
+}
+.image{
+   position: relative;
+  top: 25px;
+    width: 100%;
+    right: 10px;
+
+}
+#footer_container>div{
+    
+
+    width: 30%;
+}
+
+a{
+    color: white ; 
+  
+}
+
+
+.lastpart{
+    background-color: #004526;
+   position: relative;
+   bottom: 20px;
+    text-align: center;
+    color: white ;
+    font-family: "Calibri";
+    font-size: 20px;
+  
+    
+}
+ul{
+    list-style: none;
+}

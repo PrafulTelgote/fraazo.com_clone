@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkout</title>
- 
 </head>
 <style>
     body{
@@ -66,14 +65,65 @@
     {
         width: 70%;
     }
-    #cartitems
-    {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        margin: 0% 2% 0% 2%;
-    }
+   #form
+   {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+   #form>button
+   {
+    background-color: #47be9b;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+   }
+   #form>button:hover
+   {
+    background-color: aqua;
+   }
+   #card
+   {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+   }
+   #menu
+   {
+    width: 30%;
+    
+   }
+   #menu>h5{
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    border: 1px solid;
+   }
+   #menu>h5:hover
+   {
+    background-color: rgb(228, 225, 225);
+   }
+   #item>div
+   {
+    display: flex;
+    gap: 2%;
+   }
+   #cash
+   {
+    display: none;
+   }
+   #thanks
+   {
+    display: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+   }
+  
+
 </style>
 
 <body>
@@ -82,71 +132,56 @@
     </div>
     <div id="checkout">
         <div id="item"> 
-         <h3 id="cartitem">Cart Item : </h3>
+         <h2>Payment</h2>
+        <div>
+            <div id="menu">
+                <h5 id="card1" onclick="card1()">Card</h5>
+                <h5 id="cash1" onclick="cash1()">Cash</h5>
+            </div>
+            <div id="card"><input type="number" placeholder="Enter Your Card Number" />
+               <input type="date"   placeholder="Exp date"/><input type="number" placeholder="Enter Cvv Here"/>
+               <input type="text" placeholder="card Holder name"/></div>
+               <div id="cash">
+                    <h1> Thank for Select COD</h1>
+               </div>
+        </div>
         </div>
         <div id="bill">
             
         </div>
+       
+    </div>
+    <div id="thanks">
+        <h1>Thank You For Purchesing</h1>
+        <h1> Your Order Will Be Delivery Soon</h1>
     </div>
 </body>
 </html>
 <script>
+let card1=()=>
+{
+    document.getElementById("card").style.display="flex";
+    document.getElementById("cash").style.display="none";
+}
+let cash1=()=>
+{
+    document.getElementById("cash").style.display="block";
+    document.getElementById("card").style.display="none";
+}
+
+
+
     let sum=0;
     let count=0;
     let delivery_charger=30;
 
    let data=JSON.parse(localStorage.getItem("cartproduct")) || [];
    
-   data.forEach((el,index)=>
+   data.forEach((el)=>
    {
     sum=sum+el.price;
     count++;
-    let item=document.querySelector("#item");
-    let cartitems=document.createElement("div");
-    cartitems.id="cartitems";
-
-    let img1=document.createElement("img");
-    img1.src=el.imgUrl;
-
-    let txt=document.createElement("div");
-    txt.id="txt";
-    let name=document.createElement("h3");
-    name.innerText=el.name;
-    let unit=document.createElement("h3");
-    unit.innerText=el.unit;
-    let remove=document.createElement("button");
-    remove.innerText="Remove";
-    remove.addEventListener("click",function()
-    {
-        RemoveItem(el,index);
-    })
-    txt.append(name,unit,remove);
-
-    let price=document.createElement("h3");
-    price.style.marginRight="5%";
-    price.innerText=el.price+""+"₹";
-
-    cartitems.append(img1,txt,price);
-    item.append(cartitems)
    })
-
-
-   let cartitem=document.createElement("h3");
-   cartitem.style.color="red";
-   document.querySelector("#cartitem").append(cartitem);
-   cartitem.innerText=count;
-
-   //remove item form cart
-   function  RemoveItem(el,index)
-   {
-    data.splice(index,1);
-    localStorage.setItem("cartproduct",JSON.stringify(data));
-    window.location.reload();
-   }
-  
-
-//    let app=document.getElementById("bill");
-//    app.append(sum+delivery_charger);
 
 
 // left hand side
@@ -213,14 +248,24 @@ div2.id="address";
 let p1=document.createElement("h3");
 p1.innerText=sum+delivery_charger+""+"₹";
 let p2=document.createElement("h3");
-p2.innerText="Select Address";
+p2.innerText="PayAble Amount";
+div2.append(p1,p2);
 p2.style.cursor="pointer"
-p2.addEventListener("click",fun)
+p2.addEventListener("click",fun);
 function fun()
 {
-    window.location.href="address.html";
+    
+    setTimeout(() => {
+        document.getElementById("checkout").style.display="none";
+        document.getElementById("thanks").style.display="block";
+    }, 1000);
+
+    setTimeout(() => {
+        window.location.href="#home";
+        alert("ok");
+    }, 3000);
+
 }
-div2.append(p1,p2);
 
 document.getElementById("bill").append(div1,div2);
     

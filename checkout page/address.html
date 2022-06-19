@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkout</title>
- 
 </head>
 <style>
     body{
@@ -32,6 +31,7 @@
         box-shadow: 0 1px 10px rgb(0 0 0 / 6%);
         border-radius: 5px;
         padding: 20px;
+        
     }
     #bill
     {
@@ -66,14 +66,24 @@
     {
         width: 70%;
     }
-    #cartitems
-    {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        margin: 0% 2% 0% 2%;
-    }
+   #form
+   {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+   #form>button
+   {
+    background-color: #47be9b;
+    color: white;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+   }
+   #form>button:hover
+   {
+    background-color: aqua;
+   }
 </style>
 
 <body>
@@ -82,7 +92,16 @@
     </div>
     <div id="checkout">
         <div id="item"> 
-         <h3 id="cartitem">Cart Item : </h3>
+         <h2>Address</h2>
+         <div id="addadress">
+            <form id="form">
+                <input type="text" id="house" placeholder="Enter House/flat Number" required/>
+                <input type="text" id="area" placeholder="Enter Your Area" required/>
+                <input type="text" id="city" placeholder="Enter City" required/>
+                <input type="number" id="pin" placeholder="Enter Pincode" required/>
+                <button type="submit" onclick="getdata()">Select Delivery Slot</button>
+             </form>
+         </div>
         </div>
         <div id="bill">
             
@@ -91,62 +110,44 @@
 </body>
 </html>
 <script>
+
+    function getdata()
+    {
+        event.preventDefault();
+        let form=document.querySelector("#form");
+
+        let house=form.house.value;
+        let area=form.area.value;
+        let city=form.city.value;
+        let pincode=form.pin.value;
+        let address=new constr(house,area,city,pincode);
+        localStorage.setItem("address_user",JSON.stringify(address));
+
+        setTimeout(() => {
+            fun();
+        }, 1000);
+    }
+
+    function constr(h,a,c,p)
+    {
+     this.house=h;
+     this.area=a;
+     this.city=c;
+     this.pin=p;
+    }
+
+
     let sum=0;
     let count=0;
     let delivery_charger=30;
 
    let data=JSON.parse(localStorage.getItem("cartproduct")) || [];
    
-   data.forEach((el,index)=>
+   data.forEach((el)=>
    {
     sum=sum+el.price;
     count++;
-    let item=document.querySelector("#item");
-    let cartitems=document.createElement("div");
-    cartitems.id="cartitems";
-
-    let img1=document.createElement("img");
-    img1.src=el.imgUrl;
-
-    let txt=document.createElement("div");
-    txt.id="txt";
-    let name=document.createElement("h3");
-    name.innerText=el.name;
-    let unit=document.createElement("h3");
-    unit.innerText=el.unit;
-    let remove=document.createElement("button");
-    remove.innerText="Remove";
-    remove.addEventListener("click",function()
-    {
-        RemoveItem(el,index);
-    })
-    txt.append(name,unit,remove);
-
-    let price=document.createElement("h3");
-    price.style.marginRight="5%";
-    price.innerText=el.price+""+"₹";
-
-    cartitems.append(img1,txt,price);
-    item.append(cartitems)
    })
-
-
-   let cartitem=document.createElement("h3");
-   cartitem.style.color="red";
-   document.querySelector("#cartitem").append(cartitem);
-   cartitem.innerText=count;
-
-   //remove item form cart
-   function  RemoveItem(el,index)
-   {
-    data.splice(index,1);
-    localStorage.setItem("cartproduct",JSON.stringify(data));
-    window.location.reload();
-   }
-  
-
-//    let app=document.getElementById("bill");
-//    app.append(sum+delivery_charger);
 
 
 // left hand side
@@ -213,14 +214,25 @@ div2.id="address";
 let p1=document.createElement("h3");
 p1.innerText=sum+delivery_charger+""+"₹";
 let p2=document.createElement("h3");
-p2.innerText="Select Address";
+p2.innerText="Select Delivery Slot";
+div2.append(p1,p2);
 p2.style.cursor="pointer"
-p2.addEventListener("click",fun)
+p2.addEventListener("click",fun);
 function fun()
 {
-    window.location.href="address.html";
+    let address_user=JSON.parse(localStorage.getItem("address_user")) || [];
+    let length=address_user.length;
+    if(length==0)
+    {
+        alert("Fil the data");
+       
+    }
+    else
+    {
+        window.location.href="deliveryslot.html"; 
+    }
+    
 }
-div2.append(p1,p2);
 
 document.getElementById("bill").append(div1,div2);
     
