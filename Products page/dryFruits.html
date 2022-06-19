@@ -59,7 +59,7 @@
             name:"Cashew Tukda",
             unit:"100 g",
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/582/original/data/tr:w-512,h-512",
-            price:"84",
+            price:84,
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/000/577/original/data/tr:w-256,h-256",
             name:"Cashew",
@@ -116,7 +116,7 @@ data.map(function(elem){
     div.append(imgDiv,detDiv)
    document.getElementById("container").append(div);
    
-   div.addEventListener("click",func);
+   imgDiv.addEventListener("click",func);
    function func()
    {
      localStorage.setItem("viewproduct",JSON.stringify(elem));
