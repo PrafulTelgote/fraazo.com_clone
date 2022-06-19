@@ -175,7 +175,9 @@ let cash1=()=>
     let count=0;
     let delivery_charger=30;
 
-   let data=JSON.parse(localStorage.getItem("cartproduct")) || [];
+   var address=JSON.parse(localStorage.getItem("address_user"));
+   console.log(address);
+   var data=JSON.parse(localStorage.getItem("cartproduct")) || [];
    
    data.forEach((el)=>
    {
@@ -262,11 +264,12 @@ function fun()
 
     setTimeout(() => {
         window.location.href="#home";
-        alert("ok");
     }, 3000);
 
 }
 
 document.getElementById("bill").append(div1,div2);
+
+
     
 </script>

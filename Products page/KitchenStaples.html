@@ -39,61 +39,61 @@
         imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/441/original/data/tr:w-256,h-256",
         name:"Maya Kabuli Chana Big",
         unit:"500 g",
-        price:"72",
+        price:72,
         img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/441/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/442/original/data/tr:w-256,h-256",
             name:"Maya Kabuli Chana Big",
             unit:"500 g",
-            price:"55",
+            price:55,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/441/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/444/original/data/tr:w-256,h-256",
             name:"Maya Masoor Dal",
             unit:"500 g",
-            price:"51",
+            price:51,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/444/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/456/original/data/tr:w-256,h-256",
             name:"Maya Soyabean",
             unit:"500 g",
-            price:"56",
+            price:56,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/456/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/459/original/data/tr:w-256,h-256",
             name:"Maya Tor dal",
             unit:"1 kg",
-            price:"107",
+            price:107,
             img:"",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/481/original/data/tr:w-256,h-256",
             name:"Maya Moong dal",
             unit:"1 kg",
-            price:"113",
+            price:113,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/481/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/437/original/data/tr:w-256,h-256",
             name:"Maya Chana dal",
             unit:"500g",
-            price:"39",
+            price:39,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/437/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/438/original/data/tr:w-256,h-256",
             name:"Maya Chana Dal Stranded",
             unit:"2pc",
-            price:"38",
+            price:38,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/438/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/440/original/data/tr:w-256,h-256",
             name:"Maya Juwar Premium",
             unit:"1 kg",
-            price:"39",
+            price:39,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/440/original/data/tr:w-512,h-512",
         },{
             imgUrl:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/446/original/data/tr:w-256,h-256",
             name:"Maya Moong Dal Stranded",
             unit:"1 kg",
-            price:"111",
+            price:111,
             img:"https://images.fraazo.com/fraazo-prod/products/product_images/000/003/437/original/data/tr:w-512,h-512",
         }
     ]
@@ -138,7 +138,8 @@ data.map(function(elem){
     detDiv.append(name,unit,innerDiv)
     div.append(imgDiv,detDiv)
     cont.append(div)
-    div.addEventListener("click",func);
+    // div.addEventListener("click",func);
+    imgDiv.addEventListener("click",func);
    function func()
    {
      localStorage.setItem("viewproduct",JSON.stringify(elem));
