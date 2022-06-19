@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        user-select: none;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #popup-container {
+        background-color: #fff;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        margin: auto;
+        /* height: 380px; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        /* padding-left: 80px; */
+        padding: 20px 40px;
+      }
+      #fullname {
+        display: flex;
+        margin: auto;
+        /* gap: 0px; */
+      }
+      #inputfield {
+        width: 70%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: transparent;
+      }
+      #button {
+        width: 30%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        margin-left: 50px;
+        background: #3adde2;
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+        margin-top: 15px;
+      }
+      #radio {
+        margin-top: 10px;
+      }
+      #cross {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <!-- <button onclick="showPopUP()">Show Popup</button -->
+    <div id="popup-container" class="pouphide">
+      <div id="cross">X</div>
+      <div id="heading">
+        <h3>Hello New Customer</h3>
+        <h4>Register now for Unbelievable Discounts.</h4>
+      </div>
+      <div id="fullname">
+        <div id="firstname">
+          <input
+            type="text"
+            name="firstname"
+            id="inputfield"
+            placeholder="First"
+          />
+        </div>
+        <div id="lastname">
+          <input
+            type="text"
+            name="lastname"
+            id="inputfield"
+            placeholder="Last"
+          />
+        </div>
+      </div>
+      <div id="mail">
+        <input
+          type="email"
+          name="mail"
+          id="inputfield"
+          placeholder="Enter Your Email"
+        />
+      </div>
+      <div id="mobile">
+        <input
+          type="number"
+          name="mobile"
+          id="inputfield"
+          placeholder="Enter Your Mo."
+        />
+      </div>
+      <div id="radio">
+        <input type="radio" name="Mr." id="Mr" value="Mr." />
+        <label for="Mr">Mr.</label>
+        <input type="radio" name="Mrs." id="Mrs" value="Mrs" />
+        <label for="Mrs">Mrs.</label>
+        <input type="radio" name="Miss" id="Miss" value="Miss" />
+        <label for="Miss">Miss</label>
+      </div>
+      <button id="button" onclick="next()" type="submit">Submit</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  function next() {
+    // console.log(event);
+    let firstname = document.querySelector("#firstname #inputfield").value;
+    let email = document.querySelector("#mail #inputfield").value;
+    let mobile = document.querySelector("#mobile #inputfield").value;
+    let userData = {
+      firstname,
+      email,
+      mobile,
+    };
+    // console.log(userData);
+    localStorage.setItem("userData", JSON.stringify(userData));
+    window.location = "../orders.html";
+  }
+
+  let showingPopup = false;
+  let background = document.querySelector(".background");
+  function showPopUP() {
+    let poupID = document.querySelector("#popup-container");
+    poupID.classList.remove("pouphide");
+    showingPopup = true;
+    if (showingPopup) {
+      let background = document.querySelector(".background");
+      background.style.filter = "blur(5px)";
+    }
+  }
+
+  let crossBtn = document.querySelector("#cross");
+  crossBtn.addEventListener("click", () => {
+    hidePopUp();
+    showingPopup = false;
+    if (showingPopup) {
+      background.style.filter = "blur(5px)";
+    } else {
+      background.style.filter = "";
+    }
+  });
+
+  function hidePopUp() {
+    let hideID = document.querySelector("#popup-container");
+    hideID.classList.add("pouphide");
+  }
+</script>
+<!-- filter: blur(5px); -->
