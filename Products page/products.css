@@ -3,9 +3,20 @@
     display:flex
 }
 #div1{
+    text-decoration: double;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
     /* border:1px solid; */
     width:20%;
    padding-left: 10px;
+}
+h3{
+    margin:20px;
+    height:31px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width:170px;
+    
 }
 p{
     color:grey;
